@@ -25,12 +25,12 @@
 Summary:	Open-source implementation of the Java Platform, Standard Edition
 Summary(pl.UTF-8):	Wolnoźródłowa implementacja Java 17 SE
 Name:		openjdk17
-Version:	17.0.8.1
+Version:	17.0.9
 Release:	1
 License:	GPL v2
 Group:		Development/Languages/Java
 Source0:	https://github.com/openjdk/jdk17u/archive/jdk-%{version}-ga/%{name}-%{version}.tar.gz
-# Source0-md5:	5723a32dd7549c5585ba9912bbaf6e4e
+# Source0-md5:	83b0e653c3c8ffc1935b180fa42e9b31
 Source10:	make-cacerts.sh
 Patch0:		no_optflags.patch
 Patch1:		x32.patch
@@ -446,7 +446,7 @@ rmdir $RPM_BUILD_ROOT%{dstdir}/man
 # replace duplicates with symlinks, link to %{_bindir}
 for path in $RPM_BUILD_ROOT%{dstdir}/bin/*; do
 	filename=$(basename $path)
-        ln -sf "%{dstdir}/bin/$filename" $RPM_BUILD_ROOT%{_bindir}
+	ln -sf "%{dstdir}/bin/$filename" $RPM_BUILD_ROOT%{_bindir}
 done
 
 # keep configuration in %{_sysconfdir} (not all *.properties go there)
