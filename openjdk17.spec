@@ -113,11 +113,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Open-source implementation of the Java Platform, Standard Edition.
 
 This is a meta-package which provides, by its dependencies, all the
-OpenJDK components including the OpenJDK, Java 8 developement kit and
+OpenJDK components including the OpenJDK, Java 17 developement kit and
 runtime environment.
 
 %description -l pl.UTF-8
-Wolnoźródłowa implementacja Java 8 SE.
+Wolnoźródłowa implementacja Java 17 SE.
 
 To jest meta-pakiet, który, za pośrednictwem zależności, dostarcza
 wszystkie komponenty OpenJDK, w tym środowisko programistyczne
