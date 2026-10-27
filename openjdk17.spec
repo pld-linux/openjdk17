@@ -25,12 +25,12 @@
 Summary:	Open-source implementation of the Java Platform, Standard Edition
 Summary(pl.UTF-8):	Wolnoźródłowa implementacja Java 17 SE
 Name:		openjdk17
-Version:	17.0.20
+Version:	17.0.21.0.3
 Release:	1
 License:	GPL v2
 Group:		Development/Languages/Java
 Source0:	https://github.com/openjdk/jdk17u/archive/jdk-%{version}-ga/%{name}-%{version}.tar.gz
-# Source0-md5:	3f5337621e9f061c6b3c5f5853bc5326
+# Source0-md5:	f669aa1e593a5c7bb85f2567492be28f
 Source10:	make-cacerts.sh
 Patch0:		no_optflags.patch
 Patch1:		x32.patch
@@ -38,7 +38,8 @@ URL:		http://openjdk.java.net/
 BuildRequires:	alsa-lib-devel
 BuildRequires:	autoconf
 BuildRequires:	bash
-%{?with_cacerts:BuildRequires:	ca-certificates-update}
+# cacerts is generated from it; 20260816-1 drops the compromised eMudhra roots (CVE-2026-91403)
+%{?with_cacerts:BuildRequires:	ca-certificates-update >= 20260816-1}
 BuildRequires:	cups-devel
 BuildRequires:	elfutils-devel
 BuildRequires:	fontconfig-devel
